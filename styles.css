@@ -1,0 +1,169 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#awesomeApp {
+  padding: 15px;
+}
+#awesomeApp .wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+#awesomeApp .title {
+  color: #3F51B5;
+  font-weight: 300;
+  margin: 2px 0 1px 0;
+}
+#awesomeApp #content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+#awesomeApp #content .block {
+  margin-bottom: 15px;
+  width: 24%;
+  cursor: pointer;
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+@media all and (max-width: 480px) {
+  #awesomeApp #content .block {
+    width: 100%;
+  }
+}
+#awesomeApp #content .block:hover {
+  box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.8);
+}
+#awesomeApp #content .block .block-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 3px 0 0 0;
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  line-height: 90px;
+  vertical-align: bottom;
+  font-weight: 300;
+  padding: 0 7px;
+  color: white;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.4) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.4) 100%);
+}
+#awesomeApp #content .block img {
+  width: 100%;
+  margin-bottom: -3px;
+}
+#awesomeApp #modal-bg {
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+#awesomeApp #lightbox {
+  z-index: 2;
+}
+#awesomeApp #modal-bg,
+#awesomeApp #lightbox {
+  display: none;
+}
+#awesomeApp #modal-bg.active,
+#awesomeApp #lightbox.active {
+  display: block;
+}
+#awesomeApp #modal-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#awesomeApp #lightbox {
+  position: fixed;
+  max-height: 100%;
+  max-width: 100%;
+  top: 0;
+  bottom: inherit;
+  margin: 0 auto;
+  width: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#awesomeApp #lightbox img {
+  display: flex;
+  margin: 10px auto;
+  max-height: calc(100vh - 20px);
+  max-width: calc(100vw - 20px);
+}
+.img-nav {
+  z-index: 3;
+  position: absolute;
+  bottom: 1px;
+  width: 250px;
+  left: 50%;
+  margin-left: -125px;
+}
+#awesomeApp #lightbox:hover .next-button,
+#awesomeApp #lightbox:hover .prev-button {
+  visibility: visible;
+}
+.next-button,
+.prev-button {
+  visibility: hidden;
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  border-radius: 2px;
+  top: 50%;
+  width: auto;
+  height: auto;
+  padding: 10px;
+}
+.next-button:hover .arrow-right {
+  border-left: 30px solid blue;
+}
+.prev-button:hover .arrow-left {
+  border-right: 30px solid blue;
+}
+.next-button {
+  right: 0;
+  padding: 10px 15px 10px 20px;
+}
+.prev-button {
+  left: 0;
+  padding: 10px 20px 10px 15px;
+}
+.arrow-right,
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+.arrow-right {
+  border-left: 30px solid gray;
+}
+.arrow-left {
+  border-right: 30px solid gray;
+}
+#show-big-title {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  background: black;
+  padding: 5px;
+  margin-left: 10px;
+  width: calc(100% - 20px);
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Slack Demo App</title>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="spinner.css">
+</head>
+
+<body id="awesomeApp">
+  <div class="wrapper">
+    <h1 class="title">Click for full size image</h1>
+    <div id="content">
+      <div class="spinner-wrp">
+        <div class="text">Loading...</div>
+        <div class="cube">
+          <div class="face x"></div>
+          <div class="face y"></div>
+          <div class="face z"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-bg" onclick="awesomeApp.closeModal();"></div>
+  <div id="lightbox">
+    <img id="show-big" src="">
+    <h4 id="show-big-title"></h4>
+    <div class="next-button" onclick="awesomeApp.nextButton();">
+      <div class="arrow-right"></div>
+    </div>
+    <div class="prev-button" onclick="awesomeApp.prevButton();">
+      <div class="arrow-left"></div>
+    </div>
+  </div>
+</body>
+
+</html>
